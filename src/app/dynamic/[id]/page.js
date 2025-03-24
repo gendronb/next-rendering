@@ -1,5 +1,14 @@
 import { AbsoluteCenter, Heading, Text, VStack } from '@chakra-ui/react'
 
+const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
+
+const loadDynamic = async (id) => {
+  await sleep(2000)
+  return {
+    description: `This is a dynamic page id = ${id}`
+  }
+}
+
 export async function generateStaticParams() {
   return [1, 2, 3].map((i) => ({
     id: `${i}`
@@ -8,11 +17,15 @@ export async function generateStaticParams() {
 
 export default async function Dynamic({ params }) {
   const { id } = await params
+
+  const result = await loadDynamic(id)
+  const { description } = result
+
   return (
     <main>
       <AbsoluteCenter as={VStack}>
         <Heading>Dynamic Page</Heading>
-        <Text>This is a dynamic page id = {id}</Text>
+        <Text>{description}</Text>
       </AbsoluteCenter>
     </main>
   )
