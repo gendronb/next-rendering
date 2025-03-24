@@ -1,3 +1,5 @@
+import { setRequestLocale } from 'next-intl/server'
+
 import { AbsoluteCenter, Heading, Text, VStack } from '@chakra-ui/react'
 
 import ProjectStyles from './project-styles'
@@ -19,7 +21,10 @@ export async function generateStaticParams() {
 }
 
 export default async function Dynamic({ params }) {
-  const { id } = await params
+  const { id, locale } = await params
+
+  // Enable static rendering
+  setRequestLocale(locale)
 
   const result = await loadDynamic(id)
   const { description } = result
