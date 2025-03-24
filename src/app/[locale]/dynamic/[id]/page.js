@@ -13,6 +13,7 @@ const loadDynamic = async (id) => {
 
 export async function generateStaticParams() {
   return [1, 2, 3].map((i) => ({
+    locale: 'en',
     id: `${i}`
   }))
 }

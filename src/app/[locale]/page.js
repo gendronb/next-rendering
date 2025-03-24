@@ -1,4 +1,10 @@
+import { routing } from '@/i18n/routing'
+
 import { AbsoluteCenter, Heading, Text, VStack } from '@chakra-ui/react'
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }))
+}
 
 export default function Home() {
   return (
