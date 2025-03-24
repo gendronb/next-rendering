@@ -4,8 +4,8 @@ export default function Home() {
   return (
     <main>
       <AbsoluteCenter as={VStack}>
-        <Heading>Title</Heading>
-        <Text>This is a description</Text>
+        <Heading>Home</Heading>
+        <Text>This is the home page, statically rendered...</Text>
       </AbsoluteCenter>
     </main>
   )
