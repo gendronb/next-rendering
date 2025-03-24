@@ -1,5 +1,7 @@
 import { AbsoluteCenter, Heading, Text, VStack } from '@chakra-ui/react'
 
+import ProjectStyles from './project-styles'
+
 const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
 
 const loadDynamic = async (id) => {
@@ -24,7 +26,8 @@ export default async function Dynamic({ params }) {
   return (
     <main>
       <AbsoluteCenter as={VStack}>
-        <Heading>Dynamic Page</Heading>
+        <ProjectStyles bgColor={'#ea6a44'} />
+        <Heading fontSize={'2xl'}>Dynamic Page</Heading>
         <Text>{description}</Text>
       </AbsoluteCenter>
     </main>

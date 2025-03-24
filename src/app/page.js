@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main>
       <AbsoluteCenter as={VStack}>
-        <Heading>Home</Heading>
+        <Heading fontSize={'2xl'}>Home</Heading>
         <Text>This is the home page, statically rendered...</Text>
       </AbsoluteCenter>
     </main>
